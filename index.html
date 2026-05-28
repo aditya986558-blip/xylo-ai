@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xylo AI Assistant</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+h1 { font-size: 3rem; margin-bottom: 10px; }
+p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; }
+</style>
+</head>
+<body>
+<h1>✨ Xylo</h1>
+<p>Your Personal AI Assistant</p>
+<script>
+(function(d, t) {
+  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  v.onload = function() {
+    window.voiceflow.chat.load({
+      verify: { projectID: 'TUMHARA_PROJECT_ID' },
+      url: 'https://general-runtime.voiceflow.com',
+      versionID: 'production'
+    });
+  }
+  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+  v.type = "text/javascript";
+  s.parentNode.insertBefore(v, s);
+})(document, 'script');
+</script>
+</body>
+</html>
