@@ -23,14 +23,18 @@ p { font-size: 1.2rem; opacity: 0.8; }
 <body>
 <h1>✨ Xylo</h1>
 <p>Your Personal AI Assistant</p>
-<script type="module">
-  import { createChat } from 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
-  createChat({
-    verify: { projectID: '6a16ec51554c42121ba8fc4b' },
-    url: 'https://general-runtime.voiceflow.com',
-    versionID: 'production',
-    autostart: true,
-  });
+<script>
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '6a16ec51554c42121ba8fc4b' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production'
+      });
+    }
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, 'script');
 </script>
-</body>
-</html>
