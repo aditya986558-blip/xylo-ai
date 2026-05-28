@@ -17,26 +17,20 @@ body {
   color: white;
 }
 h1 { font-size: 3rem; margin-bottom: 10px; }
-p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; }
+p { font-size: 1.2rem; opacity: 0.8; }
 </style>
 </head>
 <body>
 <h1>✨ Xylo</h1>
 <p>Your Personal AI Assistant</p>
-<script>
-(function(d, t) {
-  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  v.onload = function() {
-    window.voiceflow.chat.load({
-      verify: { projectID: projectID: '6a16ec51554c42121ba8fc4b'
-      url: 'https://general-runtime.voiceflow.com',
-      versionID: 'production'
-    });
-  }
-  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-  v.type = "text/javascript";
-  s.parentNode.insertBefore(v, s);
-})(document, 'script');
+<script type="module">
+  import { createChat } from 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+  createChat({
+    verify: { projectID: '6a16ec51554c42121ba8fc4b' },
+    url: 'https://general-runtime.voiceflow.com',
+    versionID: 'production',
+    autostart: true,
+  });
 </script>
 </body>
 </html>
